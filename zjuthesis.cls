@@ -64,9 +64,9 @@
 \setmonofont{Courier New}
 
 \RequirePackage[CJKnormalspaces,slantfont,boldfont]{xeCJK}
-\setCJKmainfont{FangSong_GB2312}
+\setCJKmainfont{SimSun}
 \setCJKsansfont{SimHei}
-\setCJKmonofont{KaiTi_GB2312}
+\setCJKmonofont{SimSun}
 \punctstyle{kaiming}
 
 

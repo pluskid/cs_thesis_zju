@@ -12,50 +12,26 @@
 %==============================================================
 %这部分是论文封面、题名页需要的信息，请根据《研究生学位论文编写规则》自行修改
 
-  % {论文分类号}{论文密级}
-  \zjutype{C936}{}
   %论文题目：{中文}{英文}
-  \zjutitle{基于成本的钉耙强度与应用——东方视角分析}%
-           {Cost Based Rake Strength and Application: An Oriental View}
-  %作者：{姓名}{学号}
-  \zjuauthor{猪八戒}{10320022}
-  %指导教师：{导师}{合作导师}
-  \zjumentor{唐三藏}{}
-  %个人信息：{研究方向}{专业名称}{学院}
-  \zjuinfo{法器工程}{祭坛管理}{大雷音寺管理研究院}
-  %日期：{提交日期}{答辩日期中文}{答辩日期英文}
-  \zjudate{二〇〇八年九月}{二〇〇八年十二月}{December 2008}
-  %论文评阅人：{评阅人中文姓名}{评阅人英文姓名}
-  %格式：姓名$\backslash$职称$\backslash$单位
-  \zjureviewerone{}{}
-  \zjureviewerone{}{}
-  \zjureviewerone{}{}
-  \zjureviewerone{}{}
-  \zjureviewerone{}{}
-  %答辩委员会：{委员中文姓名}{委员英文姓名}
-  %格式：姓名$\backslash$职称$\backslash$单位
-  \zjucommitteemain{弥勒$\backslash$佛$\backslash$大雷音寺}%
-                   {Maitreya$\backslash$Buddha$\backslash$Thunder Monastery}
-  \zjucommitteeone{观音$\backslash$菩萨$\backslash$补陀落迦山}%
-                  {Avalokiteśvara$\backslash$Bodhisattva$\backslash$Potalaka}
-  \zjucommitteetwo{地藏王$\backslash$菩萨$\backslash$九华山}%
-                  {Ksitigarbha$\backslash$Bodhisattva$\backslash$Jiuhua Mountain}
-  \zjucommitteethree{阿氏多$\backslash$罗汉$\backslash$鹫峰山}%
-                    {Ajita$\backslash$Arhat$\backslash$Jiufeng Mountain}
-  \zjucommitteefour{广成子$\backslash$仙人$\backslash$崆峒山}%
-                   {GuangCheng-Zi$\backslash$Immortal$\backslash$Kongtong Mountain}
-  \zjucommitteefive{}{}
+  \zjutitle{基于时空正则化的机器学习算法研究}%
+           {Learning with Spatial-Temporal Regularization}
+  %作者：{中文姓名}{英文}{学号}
+  \zjuauthor{张驰原}{Chiyuan Zhang}{3053027068}
+  %指导教师：{导师中文名}{导师英文名}
+  \zjumentor{何晓飞}{Xiaofei He}
+  %个人信息：{年级}{专业名称}
+  \zjuinfo{2005 级}{计算机科学与技术}
+  %学院信息：{学院中文}{学院英文}{subject}
+  \zjucollege{计算机学院}{College of Computer Science}{Machine Learning}
+  %日期：{Submitted Date}
+  \zjudate{June 1, 2009}
 
 %==============================================================
 % 这部分除了“取舍”外，不需要自己修改，必要信息都已在上面设置。
 
   %封面
   \input{data/cover}
-  %中文题名页
-  \input{data/titlec}
-  %英文题名页
-  \input{data/titlee} % 硕士论文请根据需要取舍。
-  %独创性声明
+  %诚信承诺书
   \input{data/announce}
 
   \frontmatter   
@@ -64,7 +40,7 @@
   %勘误页
   %\input{errata}  % 请根据需要取舍。
   %致谢
-  \input{data/thanks}
+  %\input{data/thanks}
   %序言
   %\input{preface} % 请根据需要取舍。
   %中文摘要
@@ -76,9 +52,11 @@
 %这部分不需要自己修改。
 
   %目次页
+  \chaptermark{目录}
+  \addcontentsline{toc}{chapter}{目录}
   \tableofcontents
-  \addtocontents{toc}{\protect\chaptermark{目次}}
-  \addtocontents{toc}{\protect\contentsline {chapter}{\protect\makebox[\linewidth]{目次\hfill}\vspace{-2em}}{}}
+  %\addtocontents{toc}{\protect\chaptermark{目录}}
+  %\addtocontents{toc}{\protect\contentsline {chapter}{\protect\makebox[\linewidth]{目录\hfill}\vspace{-2em}}{}}
   %插图和附表清单
   \listoffigures
   \addtocontents{lof}{\protect\chaptermark{图目录}}

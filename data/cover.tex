@@ -1,11 +1,7 @@
-%%% 封面
+%%============================================================
+%% 中文封面
 
 \thispagestyle{empty}
-
-\begin{tabbing}
-\songti 分类号： \= \underline{\makebox[4cm]{\zjuclass}} \= \hspace{4cm} \= \songti 单位代码：\underline{\makebox[3cm]{10335}} \\
-\songti 密\quad 级： \> \underline{\makebox[4cm]{\zjusecurity}} \> \> \songti 学\quad\quad 号：\underline{\makebox[3cm]{\zjuauthorid}}
-\end{tabbing}
 
 \vspace{5mm}
 
@@ -13,8 +9,7 @@
    \includegraphics[width=52mm]{images/zjdx}
 \end{center}
 
-\ifthenelse{\equal{\zjudegree}{D}}{\centerline{\songti\xiaoyi 博士学位论文}}{}%
-\ifthenelse{\equal{\zjudegree}{M}}{\centerline{\songti\xiaoyi 硕士学位论文}}{}
+\centerline{\songti\xiaoyi 本科生毕业论文（设计）}
 
 \vspace{4mm}
 
@@ -22,43 +17,73 @@
   \includegraphics[width=21mm]{images/standxb}
 \end{center}
 
-\vspace{8mm}
+\vspace{25mm}
 
 \begin{tabbing}
-\songti\sanhao\bfseries 中文论文题目： \= \hspace{0mm} \= \parbox[t]{108mm}{%
+\hspace{16mm}\songti\sanhao\bfseries 题目： \= \hspace{0mm} \= \parbox[t]{98mm}{%
   \begin{picture}(0,0)(0,0)
   \setlength{\unitlength}{1cm}
-    \put(0,-0.2){\line(1,0){10.8}}
-    \put(0,-1.0){\line(1,0){10.8}}
+    \put(0,-0.2){\line(1,0){9.8}}
   \end{picture}%
 \linespread{1.1}\bfseries\Large\zjutitlec} \\[3mm]
-\songti\sanhao\bfseries 英文论文题目： \> \> \parbox[t]{108mm}{%
-  \begin{picture}(0,0)(0,0)
-  \setlength{\unitlength}{1cm}
-    \put(0,-0.2){\line(1,0){10.8}}
-    \put(0,-0.9){\line(1,0){10.8}}
-  \end{picture}%
-  \linespread{1.1}\bfseries\large\rmfamily\zjutitlee}
 \end{tabbing}
 
-\vspace{15mm}
+\vspace{4mm}
 
 \begin{tabbing}
-\hspace{30mm} \songti\sihao 申 \hspace{-2.7mm} \= \songti\sihao 请人姓名： \= \underline{\makebox[6cm]{\sihao\zjuauthorname}} \\[2mm]
-              \> \songti\sihao 指导教师： \> \underline{\makebox[6cm]{\sihao\zjumentorma}} \\[2mm]
-              \> \songti\sihao 合作导师： \> \underline{\makebox[6cm]{\sihao\zjumentorco}} \\[2mm]
-              \> \songti\sihao 专业名称： \> \underline{\makebox[6cm]{\sihao\zjumajor}} \\[2mm]
-              \> \songti\sihao 研究方向： \> \underline{\makebox[6cm]{\sihao\zjusubject}} \\[2mm]
-              \> \songti\sihao 所在学院： \> \underline{\makebox[6cm]{\sihao\zjuschool}}
+    \hspace{30mm} \songti\sihao 姓 \hspace{-2.7mm} \= \songti\sihao 名与学号： \= \underline{\makebox[6cm]{\sihao\zjuauthornamec\hspace{3mm}\zjuauthorid}} \\[2mm]
+              \> \songti\sihao 指导教师： \> \underline{\makebox[6cm]{\sihao\zjumentorc}} \\[2mm]
+              \hspace{30mm} \songti\sihao 年 \hspace{-2.7mm} \= \songti\sihao 级与专业： \= \underline{\makebox[6cm]{\sihao\zjugrade\hspace{3mm}\zjumajor}} \\[2mm]
+              \> \songti\sihao 所在学院： \> \underline{\makebox[6cm]{\sihao\zjucollegec}}
 \end{tabbing}
 
-\vspace{10mm}
 
-\begin{tabbing}
-\hspace{35mm} \= \songti\sihao\bfseries 论文提交日期： \= \underline{\makebox[50mm]{\songti\sihao\bfseries\zjuapprovaldate}}
-\end{tabbing}
-
+%%============================================================
+% empty page for two-page print
 \ifthenelse{\equal{\zjuside}{T}}{%
   \newpage\mbox{}%
   \thispagestyle{empty}}{}
 
+%%============================================================
+%% English Cover
+\newpage
+\thispagestyle{empty}
+
+\vspace{5mm}
+
+\begin{center}
+    \songti\xiaoyi A Dissertation Submitted to Zhejiang University for the Degree of Bachelor of Engineering
+\end{center}
+
+\vspace{4mm}
+
+\begin{center}
+  \includegraphics[width=21mm]{images/standxb}
+\end{center}
+
+\vspace{25mm}
+
+\begin{tabbing}
+\hspace{8mm}\songti\sanhao\bfseries TITLE: \= \hspace{0mm} \= \parbox[t]{124mm}{%
+  \begin{picture}(0,0)(0,0)
+  \setlength{\unitlength}{1cm}
+    \put(0,-0.2){\line(1,0){12.4}}
+  \end{picture}%
+\linespread{1.1}\bfseries\Large\zjutitlee} \\[3mm]
+\end{tabbing}
+
+\vspace{4mm}
+
+\begin{tabbing}
+    \hspace{18mm} \= \sanhao Author:\hspace{19mm} \= \underline{\makebox[8cm]{\sanhao\zjuauthornamee\hspace{3mm}\zjuauthorid}} \\[2mm]
+                  \> \sanhao Supervisor: \> \underline{\makebox[8cm]{\sanhao\zjumentore}} \\[2mm]
+                  \> \sanhao Subject: \> \underline{\makebox[8cm]{\sanhao\zjusubject}} \\[2mm]
+                  \> \sanhao College: \> \underline{\makebox[8cm]{\sanhao\zjucollegee}} \\[2mm]
+                  \> \sanhao Submitted Date: \> \underline{\makebox[8cm]{\sanhao\zjusubmitteddatee}}
+\end{tabbing}
+
+%%============================================================
+% empty page for two-page print
+\ifthenelse{\equal{\zjuside}{T}}{%
+  \newpage\mbox{}%
+  \thispagestyle{empty}}{}
