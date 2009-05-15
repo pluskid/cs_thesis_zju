@@ -37,12 +37,6 @@
   \frontmatter   
   \pagenumbering{Roman}
 
-  %勘误页
-  %\input{errata}  % 请根据需要取舍。
-  %致谢
-  %\input{data/thanks}
-  %序言
-  %\input{preface} % 请根据需要取舍。
   %中文摘要
   \include{data/absc}
   %英文摘要
@@ -55,16 +49,6 @@
   \chaptermark{目录}
   \addcontentsline{toc}{chapter}{目录}
   \tableofcontents
-  %\addtocontents{toc}{\protect\chaptermark{目录}}
-  %\addtocontents{toc}{\protect\contentsline {chapter}{\protect\makebox[\linewidth]{目录\hfill}\vspace{-2em}}{}}
-  %插图和附表清单
-  \listoffigures
-  \addtocontents{lof}{\protect\chaptermark{图目录}}
-  \listoftables
-  \addtocontents{lot}{\protect\chaptermark{表目录}}
-  %术语表
-  \printnomenclature
-  \chaptermark{术语表}
 
   \mainmatter
 
@@ -86,11 +70,10 @@
 
   \bibliography{bibfile/zjubib}
 
+  %致谢
+  \include{data/thanks}
   %附录
   \include{data/appe}
-  % 这里应该还有个 indices，但我从没见过有使用 indices 的论文，略之。
-  %作者简历
-  \include{data/self}
 
 %==============================================================
 %==============================================================
