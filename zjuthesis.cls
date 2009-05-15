@@ -132,7 +132,11 @@
 \setCJKfamilyfont{LiShu}{LiSu}
 \setCJKfamilyfont{SongTi}{SimSun}
 \setCJKfamilyfont{YouYuan}{YouYuan}
+\setCJKfamilyfont{STFangsong}{STFangsong}
+\setCJKfamilyfont{STXingkai}{STXingkai}
 \DeclareRobustCommand{\fangsong}{\CJKfamily{FangSong}}
+\DeclareRobustCommand{\stfangsong}{\CJKfamily{STFangsong}}
+\DeclareRobustCommand{\stxingkai}{\CJKfamily{STXingkai}}
 \DeclareRobustCommand{\heiti}{\CJKfamily{HeiTi}}
 \DeclareRobustCommand{\kaiti}{\CJKfamily{KaiShu}}
 \DeclareRobustCommand{\lishu}{\CJKfamily{LiShu}}
