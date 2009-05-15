@@ -1,0 +1,58 @@
+%%% 英文提名页
+
+\newpage
+\thispagestyle{empty}
+
+\vspace{5mm}
+
+\begin{center}
+\parbox{0.75\linewidth}{%
+  \begin{picture}(0,0)(0,0)
+  \setlength{\unitlength}{1cm}
+    \put(0,-0.2){\line(1,0){11.3}}
+    \put(0,-1.1){\line(1,0){11.3}}
+  \end{picture}%
+  \linespread{1.4}\large\bfseries\zjutitlee}
+\end{center}
+
+\vspace{5mm}
+
+\begin{center}
+  \includegraphics[width=21mm]{images/standxb.pdf}
+\end{center}
+
+\vspace{-6mm}
+
+\begin{tabbing}
+\hspace{20mm} \= \large\bfseries Supervisor's signature: \= \underline{\makebox[5cm]{}}\kill \\
+              \> \hspace{7mm} \large\bfseries Author's signature: \> \underline{\makebox[5cm]{}} \\[5mm]
+              \> \large\bfseries Supervisor's signature: \> \underline{\makebox[5cm]{}}
+\end{tabbing}
+
+\vspace{8mm}
+
+\begin{tabbing}
+\large External Reviewers: \= \underline{\makebox[10.8cm]{\zjurevieweronee}} \\
+                    \> \underline{\makebox[10.8cm]{\zjureviewertwoe}} \\
+                    \> \underline{\makebox[10.8cm]{\zjureviewerthreee}} \\
+                    \> \underline{\makebox[10.8cm]{\zjureviewerfoure}} \\
+                    \> \underline{\makebox[10.8cm]{\zjureviewerfivee}} \\[8mm]
+\large Examining Committe Chairperson: \= \\
+\hspace{41mm} \= \underline{\makebox[10.8cm]{\zjucommitteemaine}} \\
+\large Examining Committe Members: \= \\
+\hspace{41mm} \= \underline{\makebox[10.8cm]{\zjucommitteeonee}} \\
+             \> \underline{\makebox[10.8cm]{\zjucommitteetwoe}} \\
+             \> \underline{\makebox[10.8cm]{\zjucommitteethreee}} \\
+             \> \underline{\makebox[10.8cm]{\zjucommitteefoure}} \\
+             \> \underline{\makebox[10.8cm]{\zjucommitteefivee}}
+\end{tabbing}
+
+\vspace{6mm}
+
+\begin{tabbing}
+\hspace{28mm} \= \large Date of oral defence: \underline{\makebox[5cm]{\zjudefencedatee}}
+\end{tabbing}
+
+\ifthenelse{\equal{\zjuside}{T}}{%
+  \newpage\mbox{}%
+  \thispagestyle{empty}}{}
