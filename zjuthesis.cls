@@ -23,8 +23,6 @@
 \NeedsTeXFormat{LaTeX2e}[1999/12/01]
 \ProvidesClass{cskeleton}
     [2008/10/24 v0.1 ZJU Dissertation Class]
-\DeclareOption{master}{\def\zjudegree{M}}
-\DeclareOption{doctor}{\def\zjudegree{D}}
 
 \DeclareOption{authoryear}{\def\zjubibstyle{A}}
 \DeclareOption{numberorder}{\def\zjubibstyle{N}}
@@ -144,26 +142,26 @@
 \DeclareRobustCommand{\youti}{\CJKfamily{YouYuan}}
 \setcounter{secnumdepth}{4}
 
-\titleformat{\chapter}[hang]%
-  {\xiaosan\bfseries}{\thechapter}{1em}{}{}
+\titleformat{\chapter}[block]%
+{\sanhao\heiti\filcenter}{第 \thechapter{} 章}{1em}{}{}
 \titlespacing{\chapter}%
   {0pt}{0.3\baselineskip}{0.3\baselineskip}
 \titlecontents{chapter}[1.5em]{}%
-  {\contentslabel{1.5em}}{\hspace{-1.5em}}{\titlerule*[10pt]{.}\contentspage}
+{第 \thecontentslabel{} 章\hspace{1em}}{}{\titlerule*[10pt]{.}\contentspage}
 
 \titleformat{\section}[hang]%
-  {\sihao\bfseries}{\thesection}{1em}{}{}
+  {\sihao\heiti}{\thesection}{1em}{}{}
 \titlespacing{\section}%
   {0pt}{0.2\baselineskip}{0.2\baselineskip}
 \titlecontents{section}[2.2em]{}%
-  {\contentslabel{2.2em}}{\hspace{-3.2em}}{\titlerule*[10pt]{.}\contentspage}
+{\hspace{1em}\thecontentslabel\hspace{1em}}{}{\titlerule*[10pt]{.}\contentspage}
 
 \titleformat{\subsection}[hang]%
-  {\xiaosi}{\thesubsection}{1em}{}{}
+  {\xiaosi\heiti}{\thesubsection}{1em}{}{}
 \titlespacing{\subsection}%
   {0pt}{0.1\baselineskip}{0.1\baselineskip}
 \titlecontents{subsection}[3.0em]{}%
-  {\contentslabel{3.0em}}{\hspace{-5.0em}}{\titlerule*[10pt]{.}\contentspage}
+{\hspace{2em}\thecontentslabel\hspace{1em}}{}{\titlerule*[10pt]{.}\contentspage}
 
 \titleformat{\subsubsection}[hang]%
   {\xiaosi}{\thesubsubsection}{1em}{}{}
@@ -173,35 +171,16 @@
 \fancyhf{}
 \renewcommand{\headrulewidth}{0.5pt}
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
-\ifzju@side
-  \fancypagestyle{plain}{
-    \fancyhead[LE]{%
-      \ifthenelse{\equal{\zjudegree}{D}}{\xiaowu\songti 浙江大学博士学位论文}{}%
-      \ifthenelse{\equal{\zjudegree}{M}}{\xiaowu\songti 浙江大学硕士学位论文}{}%
-    }
-    \fancyhead[RO]{\xiaowu\songti\leftmark}
-    \fancyfoot[LE,RO]{\xiaowu\thepage}}
-  \fancyhead[LE]{%
-      \ifthenelse{\equal{\zjudegree}{D}}{\xiaowu\songti 浙江大学博士学位论文}{}%
-      \ifthenelse{\equal{\zjudegree}{M}}{\xiaowu\songti 浙江大学硕士学位论文}{}%
-  }
-  \fancyhead[RO]{\xiaowu\songti\leftmark}
-  \fancyfoot[LE,RO]{\xiaowu\thepage}
-\else
-  \fancypagestyle{plain}{
-    \fancyhead[L]{%
-      \ifthenelse{\equal{\zjudegree}{D}}{\xiaowu\songti 浙江大学博士学位论文}{}%
-      \ifthenelse{\equal{\zjudegree}{M}}{\xiaowu\songti 浙江大学硕士学位论文}{}%
-    }
-    \fancyhead[R]{\xiaowu\songti\leftmark}
-    \fancyfoot[C]{\xiaowu\thepage}}
-  \fancyhead[L]{%
-      \ifthenelse{\equal{\zjudegree}{D}}{\xiaowu\songti 浙江大学博士学位论文}{}%
-      \ifthenelse{\equal{\zjudegree}{M}}{\xiaowu\songti 浙江大学硕士学位论文}{}%
-  }
+% 不管单面双面，页眉始终是那个样子
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyhead[L]{\xiaowu\songti 浙江大学本科毕业论文}
   \fancyhead[R]{\xiaowu\songti\leftmark}
-  \fancyfoot[C]{\xiaowu\thepage}
-\fi
+  \fancyfoot[C]{\xiaowu\thepage}}
+\fancyhf{}
+\fancyhead[L]{\xiaowu\songti 浙江大学本科毕业论文}
+\fancyhead[R]{\xiaowu\songti\leftmark}
+\fancyfoot[C]{\xiaowu\thepage}
 \renewcommand{\contentsname}{\centerline{目\quad 录}}
 \renewcommand{\listfigurename}{\centerline{图~目~录}}
 \renewcommand{\listtablename}{\centerline{表~目~录}}
