@@ -77,13 +77,6 @@
 \urlstyle{tt}
 
 \bibliographystyle{plain}
-% \ifthenelse{\equal{\zjubibstyle}{A}}{%
-%   \RequirePackage[authoryear,round,colon,sort&compress]{natbib}%
-%   \bibpunct{(}{)}{;}{a}{}{;}
-%   \bibliographystyle{bibfile/zjugbay}}{}
-% \ifthenelse{\equal{\zjubibstyle}{N}}{%
-%   \RequirePackage[super,square,comma,sort&compress]{natbib}%
-%   \bibliographystyle{bibfile/zjugbno}}{}
 
 \RequirePackage{lscape}
 \RequirePackage{graphicx}
@@ -108,7 +101,6 @@
 
 \renewcommand{\baselinestretch}{1.6}
 \renewcommand{\arraystretch}{0.6}
-% \addtolength{\bibsep}{-0.5em}
 \DeclareRobustCommand{\chuhao}{\fontsize{42pt}{\baselineskip}\selectfont}
 \DeclareRobustCommand{\xiaochu}{\fontsize{36pt}{\baselineskip}\selectfont}
 \DeclareRobustCommand{\yihao}{\fontsize{26pt}{\baselineskip}\selectfont}
@@ -197,11 +189,6 @@
 \renewcommand{\captionlabelsep}{\hspace{1em}} %定义图表编号与标题间的间隔距离
 \setlength{\belowcaptionskip}{2mm}
 \renewcommand{\footnotesize}{\xiaowu}
-\addtolength{\skip\footins}{2mm plus 2mm}
-\renewcommand{\@makefnmark}{\mbox{\textsuperscript{\textcircled{\tiny\@thefnmark}}}}
-\newcommand{\citezp}[2][]{\citep{#2}\textsuperscript{#1}}
-\newcommand{\citezt}[2][]{\citet{#2}\textsuperscript{#1}}
-\newcommand{\citez}[2][]{\cite{#2}\textsuperscript{#1}}
 \newtheoremstyle{zjutheorem}
    {9pt}{9pt}{\ttfamily}{0pt}{\lishu}{：}{0pt}{}
 \theoremstyle{zjutheorem}
