@@ -79,10 +79,10 @@
 \ifthenelse{\equal{\zjubibstyle}{A}}{%
   \RequirePackage[authoryear,round,colon,sort&compress]{natbib}%
   \bibpunct{(}{)}{;}{a}{}{;}
-  \bibliographystyle{zjugbay}}{}
+  \bibliographystyle{bibfile/zjugbay}}{}
 \ifthenelse{\equal{\zjubibstyle}{N}}{%
   \RequirePackage[super,square,comma,sort&compress]{natbib}%
-  \bibliographystyle{zjugbno}}{}
+  \bibliographystyle{bibfile/zjugbno}}{}
 
 \RequirePackage{lscape}
 \RequirePackage{graphicx}
