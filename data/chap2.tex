@@ -1,4 +1,63 @@
+\chapter{相关的工作}
 
-\chapter{第二章}
+在这一章中，我们简要地介绍 Cheng 的视频压缩方法
+\cite{learning-to-compress-images}
+，这是和我们的方法最相关的工作。从机器学习的视觉来看，视频着色可以被理解为一个半监督学习
+的过程。给定一个视频帧的一些有颜色的像素点（有标签的数据）和一些灰度像素点（无标签的数据），我们
+希望学习一个模型，用于在灰度信息的基础上预测当前以及后续一些帧的颜色值（标签）。
 
-这是第二章，目的是占个位置。你知道《浙大同学爱占坐》这首歌吗？
+接下来我们将介绍用于半监督学习的拉普拉斯正则化的最小二乘法（LapRLS）。使用
+LapRLS
+来进行着色是基于这样的一个假设：如果两个点有类似的灰度值并且在空间上比较接近，那么他们的颜色值也很
+有可能是非常相似的。我们用$\textbf{z} \in \mathbb{R}^d$
+来表示有标签的数据点，$\textbf{x} \in \mathbb{R}^d$
+来表示任意数据点（有标签或者没有标签的）。
+
+考虑这样一个线性回归模型$y=\textbf{a}^T \textbf{x} +
+\epsilon$，其中$y$是因变量，$\textbf{x}$是自变量，$\textbf{a}$是权重向量，而$\epsilon$是一个
+位置的期望为零的误差。不同的观察值有不同的误差，这些误差之间相互独立，但是方差都等于$\sigma^2$。在
+给定输入向量$\textbf{x}$和权重向量$\textbf{a}$的前提下，我们定义
+$f(\textbf{x})=\textbf{a}^T\textbf{x}$为模型的输出。
+
+LapRLS算法同时使用有标签的数据和无标签的数据来学习回归模型$f$。假设一共有$m$个点，其中$k$个有
+标签。令$S$为相似度矩阵，LapRLS算法对如下优化问题进行求解：
+
+\begin{eqnarray}
+&J_{LapRLS}(\textbf{a}) =\sum_{i=1}^k \big( f(\textbf{z}_i) - y_i \big)^2 \nonumber \\
+& + \frac{\lambda_1}{2} \sum_{i,j=1}^{m} \big( f(\textbf{x}_i) -
+f(\textbf{x}_j)\big)^2 S_{ij} + \lambda_2 \|\textbf{a}\|^2
+\label{eqn:LPP-least-square-error}
+\end{eqnarray}
+
+其中$y_i$是数据点$z_i$的标签。在我们选取的对称权重$S_{ij}$（$S_{ij}=S_{ji}$）下，给定的损失函数
+将不允许相邻的点$\textbf{x}_i$和$\textbf{x}_j$被影射到互相远离的地方。因此，最小化
+$J_{LapRLS}(\textbf{a})$就可以保证如果$\textbf{x}_i$和$\textbf{x}_j$相互接近的话，$f(\textbf{x}_i)$
+和$f(\textbf{x}_j)$之间也会比较接近。对于相似度矩阵$S$有许多不同的选择，一个简单的定义如下所示：
+
+\begin{equation}
+S_{ij}=\left\{%
+\begin{array}{ll}
+    1, &
+    \hbox{如果$\textbf{x}_i$在$\textbf{x}_j$的$p$个最接近的邻居中，}\\
+    & \hbox{或者$\textbf{x}_j$在$\textbf{x}_i$的$p$个最接近的邻居中;} \\
+    0, & \hbox{其他情况.} \\
+\end{array}%
+\right. \label{eqn:similarity}
+\end{equation}
+
+令$D$为一个对角阵，$D_{ii}=\sum_j
+S_{ij}$并且$L=D-S$。矩阵$L$在谱图理论中被称为拉普拉斯算子。令$Z=(\textbf{z}_1,
+\cdots, \textbf{z}_k)$, $X=(\textbf{x}_1, \cdots,
+\textbf{x}_m)$，$\textbf{y}=(y_1, \cdots,
+y_k)^T$，则最小化问题\ref{eqn:LPP-least-square-error}的解由下式给出：
+
+\begin{equation}\label{eqn:LapRLS-solution}
+\widehat{\textbf{a}}=\big(ZZ^T + \lambda_1 XLX^T +\lambda_2 I
+\big)^{-1} Z\textbf{y}
+\end{equation}
+
+其中$I$是一个$d \times
+d$的单位矩阵。LapRLS也可以在再生核希尔伯特空间（Reproducing Kernel
+Hilbert Space,
+RKHS）中进行，这将到处一个非线性的解。关于LapRLS的更多细节请参见\cite{Manifold-Regularization-Journal}。
+

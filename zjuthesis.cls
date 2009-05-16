@@ -61,7 +61,7 @@
 \setsansfont{Arial}
 \setmonofont{Courier New}
 
-\RequirePackage[CJKnormalspaces,slantfont,boldfont]{xeCJK}
+\RequirePackage[CJKtextspaces,CJKmathspaces,slantfont,boldfont]{xeCJK}
 \setCJKmainfont{SimSun}
 \setCJKsansfont{SimHei}
 \setCJKmonofont{SimSun}
@@ -192,10 +192,11 @@
 \newtheoremstyle{zjutheorem}
    {9pt}{9pt}{\ttfamily}{0pt}{\lishu}{：}{0pt}{}
 \theoremstyle{zjutheorem}
-\newtheorem{hypo}{假设~}[chapter]
-\newtheorem{defin}{定义~}[chapter]
-\newtheorem{theo}{定理~}[chapter]
-\newtheorem{pro}{证明~}[chapter]
+\newtheorem{zjuhypothsis}{假设~}[chapter]
+\newtheorem{zjudefine}{定义~}[chapter]
+\newtheorem{zjutheorem}{定理~}[chapter]
+\newtheorem{zjuproposition}{命题~}[chapter]
+\newenvironment{zjuproof}{\begin{proof}[\textnormal{\lishu 证明~}]}{\end{proof}}
 \newcolumntype{.}{D{.}{.}{2.4}}
 \AtBeginDocument{%
    \makeatletter
