@@ -76,13 +76,14 @@
 \RequirePackage{url}
 \urlstyle{tt}
 
-\ifthenelse{\equal{\zjubibstyle}{A}}{%
-  \RequirePackage[authoryear,round,colon,sort&compress]{natbib}%
-  \bibpunct{(}{)}{;}{a}{}{;}
-  \bibliographystyle{bibfile/zjugbay}}{}
-\ifthenelse{\equal{\zjubibstyle}{N}}{%
-  \RequirePackage[super,square,comma,sort&compress]{natbib}%
-  \bibliographystyle{bibfile/zjugbno}}{}
+\bibliographystyle{plain}
+% \ifthenelse{\equal{\zjubibstyle}{A}}{%
+%   \RequirePackage[authoryear,round,colon,sort&compress]{natbib}%
+%   \bibpunct{(}{)}{;}{a}{}{;}
+%   \bibliographystyle{bibfile/zjugbay}}{}
+% \ifthenelse{\equal{\zjubibstyle}{N}}{%
+%   \RequirePackage[super,square,comma,sort&compress]{natbib}%
+%   \bibliographystyle{bibfile/zjugbno}}{}
 
 \RequirePackage{lscape}
 \RequirePackage{graphicx}
@@ -107,7 +108,7 @@
 
 \renewcommand{\baselinestretch}{1.6}
 \renewcommand{\arraystretch}{0.6}
-\addtolength{\bibsep}{-0.5em}
+% \addtolength{\bibsep}{-0.5em}
 \DeclareRobustCommand{\chuhao}{\fontsize{42pt}{\baselineskip}\selectfont}
 \DeclareRobustCommand{\xiaochu}{\fontsize{36pt}{\baselineskip}\selectfont}
 \DeclareRobustCommand{\yihao}{\fontsize{26pt}{\baselineskip}\selectfont}
