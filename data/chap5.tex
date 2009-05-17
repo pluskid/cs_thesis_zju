@@ -33,20 +33,17 @@ al. \cite{learning-to-compress-images} 建议使用 NCut
 学习一个模型，并用它来预测灰度像素点的颜色值。
 
 \begin{figure*}[t]
-  \center \subfigure[Original
-  Frames]{\includegraphics[width=.4\linewidth]{images/telemarket-frames}}
-  \hspace{4mm} \subfigure[Colorized
-  Frames]{\includegraphics[width=.4\linewidth]{images/telemarket-rcv}}
-\caption{The first 48 frames of video
-  telemarket. We put a yellow film icon where our method trained a new
-  model and a red film icon for Cheng's Approach.}
+  \center \subfigure[原始帧]{\includegraphics[width=.4\linewidth]{images/telemarket-frames}}
+  \hspace{4mm} \subfigure[着色帧]{\includegraphics[width=.4\linewidth]{images/telemarket-rcv}}
+\caption{接线员视频的初始 48 帧。我们的方法重新训练模型的帧由黄色的胶
+  卷图标标出，Cheng 的方法重新训练模型的帧则由红色胶卷图标标出。}
 \label{fig:telemarket}
 \end{figure*}
 
 
 \begin{table*}[t]
   \centering \scriptsize
-  \caption{Video compression comparison. cr denotes compression ratio.}
+  \caption{视频压缩结果。 cr 表示压缩比（compression ratio）}
   \label{tab:more-example}
   \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|}
     \hline
