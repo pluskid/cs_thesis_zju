@@ -1,8 +1,41 @@
 \chapter{相关的工作}
 
-在这一章中，我们简要地介绍 Cheng 的视频压缩方法
+\section{时空正则化}
+传统的正则化主要都是针对数据在空间上的特性来进行考虑的，另一方面，有不少研究方向则主要集中在
+发现数据随着时间变化的模式这个问题上（例如时间文本挖掘 \cite{mei2005det}）。真正把时间放在正则化
+的上下文来考虑并和传统的空间正则化结合起来，也是最近才逐渐有相关的研究出现。
+
+其中进化聚类（Evolutionary clustering）\cite{chakrabarti2006ec,chi2007esc} 与我们在这里考虑的
+时空正则化的思想最为接近。进化聚类就是将考虑了时间正则化的
+聚类算法。在 \cite{chi2007esc} 中，Yun 提出了两个用于引进时间平滑度到 K-means 和谱聚类中的框架：
+
+\begin{itemize}
+  \item \textbf{Preserving Cluster Quality (PCQ)}：在这个框架中，在时间 t 时得到的聚类分割被直接
+      用于对时间 t-1 时的数据进行分割，如果在时间 t 时有几个聚类方式都很好，那么在 t-1 时的数据
+      上表现最好的那个将胜出。具体地说，如下的一个正则化项被加到 K-means 的损失函数上：
+\begin{align*}
+\text{Cost}_{KM}&=\alpha \cdot CS_{KM}+\beta\cdot CT_{KM} \\
+&=\alpha \cdot KM_t|_{Z_t} + \beta \cdot KM_{t-1}|_{Z_t} \\
+&=\alpha\cdot\sum_{l=1}^k\sum_{i\in\mathcal{V}_{l,t}}\|\vec{v}_{i,t}-\vec{\mu}_{l,t}\|^2
+\\
+&\mathrel{\phantom{=}}{}+\beta\cdot\sum_{l=1}^k\sum_{i\in\mathcal{V}_{l,t}}\|\vec{v}_{i,t-1}-\vec{\mu}_{l,t-1}\|^2
+\end{align*}
+      同样的方法可以用在谱聚类上，得到的结果可以化归到标准的谱聚类的形式并通过迭代的方法进行求解。
+      他们还证明了进化 K 平均聚类算法是进化谱聚类算法的一个特殊情况，并可以用类似的办法进行求解。
+  \item \textbf{Preserving Clustering Membership (PCM)}：在这个框架中，时间 t 时的聚类分割方式
+      被直接与时间 t-1 时的分割方式进行比较，两个分割的比较基于 $\chi$ 方统计分布 \cite{hubert1985cp}：
+\[
+\chi^2(Z_t,Z_{t-1})=n\left(\sum_{i=1}^k\sum_{j=1}^k\frac{|\mathcal{V}_{ij}|^2}{|\mathcal{V}_{i,t}|
+\cdot |\mathcal{V}_{j,t-1}|}-1\right)
+\]
+      同 PCQ 类似，一个额外的正则化项被添加到原来的损失函数，并化归到合适的形式以便进行迭代求解。
+\end{itemize}
+
+\section{视频压缩}
+在这一节中，我们简要地介绍 Cheng 的视频压缩方法
 \cite{learning-to-compress-images}
-，这是和我们的方法最相关的工作。从机器学习的视觉来看，视频着色可以被理解为一个半监督学习
+，他们的工作首先考虑了使用机器学习的方法来进行视频压缩，我们的改进算法使用了类似的思路。
+从机器学习的视觉来看，视频着色可以被理解为一个半监督学习
 的过程。给定一个视频帧的一些有颜色的像素点（有标签的数据）和一些灰度像素点（无标签的数据），我们
 希望学习一个模型，用于在灰度信息的基础上预测当前以及后续一些帧的颜色值（标签）。
 
