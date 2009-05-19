@@ -55,6 +55,8 @@
 \RequirePackage{xunicode}
 \RequirePackage{xltxtra}
 
+\RequirePackage[normalem]{ulem}
+
 \XeTeXlinebreaklocale "zh"
 \XeTeXlinebreakskip = 0pt plus 1pt
 %\setmainfont{Times New Roman}
