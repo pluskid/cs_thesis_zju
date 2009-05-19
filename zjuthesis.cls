@@ -57,7 +57,8 @@
 
 \XeTeXlinebreaklocale "zh"
 \XeTeXlinebreakskip = 0pt plus 1pt
-\setmainfont{Times New Roman}
+%\setmainfont{Times New Roman}
+\setmainfont{TeX Gyre Pagella}
 \setsansfont{Arial}
 \setmonofont{Courier New}
 
@@ -147,14 +148,14 @@
 \titlespacing{\section}%
   {0pt}{0.2\baselineskip}{0.2\baselineskip}
 \titlecontents{section}[2.2em]{}%
-{\hspace{1em}\thecontentslabel\hspace{1em}}{}{\titlerule*[10pt]{.}\contentspage}
+{\hspace{1em}\thecontentslabel\hspace{1em}}{}{\titlerule*[7pt]{.}\contentspage}
 
 \titleformat{\subsection}[hang]%
   {\xiaosi\heiti}{\thesubsection}{1em}{}{}
 \titlespacing{\subsection}%
   {0pt}{0.1\baselineskip}{0.1\baselineskip}
 \titlecontents{subsection}[3.0em]{}%
-{\hspace{2em}\thecontentslabel\hspace{1em}}{}{\titlerule*[10pt]{.}\contentspage}
+{\hspace{2em}\thecontentslabel\hspace{1em}}{}{\titlerule*[5pt]{.}\contentspage}
 
 \titleformat{\subsubsection}[hang]%
   {\xiaosi}{\thesubsubsection}{1em}{}{}
