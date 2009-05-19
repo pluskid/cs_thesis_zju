@@ -57,8 +57,7 @@
 
 \XeTeXlinebreaklocale "zh"
 \XeTeXlinebreakskip = 0pt plus 1pt
-%\setmainfont{Times New Roman}
-\setmainfont{TeX Gyre Pagella}
+\setmainfont{Times New Roman}
 \setsansfont{Arial}
 \setmonofont{Courier New}
 
